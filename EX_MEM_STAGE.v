@@ -22,6 +22,9 @@ output [2:0] Rsel_out,
 
 input [1:0] Wsel_in,
 output [1:0] Wsel_out,
+
+input ID_EX_Regwrite_in,
+output ID_EX_Regwrite_out
 );
 p_reg_32b ALUdata(.rst(rst),.en(en),.clk(clk),.data_in(ALU_in),.data_out(ALU_out));
 p_reg_32b pcm(.rst(rst),.en(en),.clk(clk),.data_in(pcm_in),.data_out(pcm_out));
@@ -31,4 +34,5 @@ p_reg_2b WBsel(.rst(rst),.en(en),.clk(clk),.data_in(WBsel_in),.data_out(WBsel_ou
 p_reg_1b MEMRw(.rst(rst),.en(en),.clk(clk),.data_in(MEMRw_in),.data_out(MEMRw_out));
 p_reg_3b Rsel(.rst(rst),.en(en),.clk(clk),.data_in(Rsel_in),.data_out(Rsel_out));
 p_reg_2b Wsel(.rst(rst),.en(en),.clk(clk),.data_in(Wsel_in),.data_out(Wsel_out));
+p_reg_1b RegWrite(.rst(rst),.en(en),.clk(clk),.data_in(ID_EX_Regwrite_in),.data_out(ID_EX_Regwrite_out));
 endmodule

@@ -10,7 +10,10 @@ module forwardingUnit #(
 	output [1:0] ForwardA,
 	output [1:0] ForwardB
 );
-
+//rs: rs1
+//rt: rs2
+ reg [1:0] ForwardA_tmp;
+ reg [1:0] ForwardB_tmp;
 	always @(ID_EX_Rs, ID_EX_Rt, EX_MEM_Rd, MEM_WB_Rd, EX_MEM_RegWrite, MEM_WB_RegWrite) begin
 		ForwardA_tmp = 2'b00;
 		ForwardB_tmp = 2'b00;
