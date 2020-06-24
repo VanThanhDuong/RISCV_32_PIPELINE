@@ -28,7 +28,7 @@ input IF_ID_Regwrite_in,
 output reg IF_ID_Regwrite_out);
 always @(muxsel)
 case(muxsel)
-1'b0: 
+1'b1: 
 begin
 assign Wbsel_out = zero;
 assign MemRw_out = zero;
@@ -40,7 +40,7 @@ assign Wsel_out = zero;
 assign immsel_out = zero;
 assign IF_ID_Regwrite_out = zero;
 end
-1'b1:
+1'b0:
 begin
 assign Wbsel_out = Wbsel_in;
 assign MemRw_out = MemRw_in;
