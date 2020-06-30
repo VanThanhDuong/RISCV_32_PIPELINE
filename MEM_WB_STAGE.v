@@ -12,7 +12,10 @@ input [1:0] WBsel_in,
 output [1:0] WBsel_out,
 
 input EX_MEM_Regwrite_in,
-output EX_MEM_Regwrite_out
+output EX_MEM_Regwrite_out,
+
+input [31:0] MEM_WB_PC_in;
+output [31:0] MEM_WB_PC_out;
 );
 p_reg_32b DataMEM(.rst(rst),.en(en),.clk(clk),.data_in(DataMEM_in),.data_out(DataMEM_out));
 p_reg_32b ALUdata(.rst(rst),.en(en),.clk(clk),.data_in(DataALU_in),.data_out(DataALU_out));

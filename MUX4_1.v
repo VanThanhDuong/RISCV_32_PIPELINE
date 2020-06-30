@@ -1,4 +1,4 @@
-module mux4_1 #(parameter datawidth = 32)(input [1:0] muxsel,
+module mux4_1 #(parameter datawidth = 32)(input [1:0] muxsel,input Asel,
 input [datawidth - 1 : 0] pcx,
 input [datawidth - 1 : 0] datareg1,
 input [datawidth - 1 : 0] dataALU,
