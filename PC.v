@@ -13,14 +13,13 @@ module PC(pc_out, clk, pc_in,rst,en);
 input clk;
 input [31:0] pc_in;
 output [31:0] pc_out;
+input en;
 input rst;
 reg [31:0] pc_1; reg [31:0] pc_mid;
 
 initial 
 begin
 pc_mid <= 32'h00_00_00_00;
-rst <= 0;
-en <= 1;
 end
 always@(posedge clk)
 begin
@@ -30,6 +29,7 @@ else
 begin
 if (en)
 pc_1 <= pc_mid;
+end
 end
 always@(negedge clk)
 begin

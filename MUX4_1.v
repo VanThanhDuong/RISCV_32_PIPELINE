@@ -1,16 +1,16 @@
-module mux4_1 #(parameter datawidth = 32)(input [1:0] muxsel,input Asel,
-input [datawidth - 1 : 0] pcx,
+module mux4_1 #(parameter datawidth = 32)(input [1:0] muxsel,
 input [datawidth - 1 : 0] datareg1,
 input [datawidth - 1 : 0] dataALU,
 input [datawidth - 1 : 0] dataWB,
 output [datawidth - 1 : 0] MUX_out );
-case(muxsel)
-2'b00: 
+reg [31:0] mux_temp;
+always@(muxsel )
 begin
-if (Asel == 1) MUX_out = pcx;
-else MUX_out = datareg1;
-end
-2'b01: assign MUX_out = dataWB;
-2'b10: assign MUX_out = dataALU;
+case(muxsel)
+2'b00: mux_temp <= datareg1;
+2'b01:  mux_temp <= dataWB;
+2'b10: mux_temp <= dataALU;
 endcase
+end
+assign MUX_out = mux_temp;
 endmodule

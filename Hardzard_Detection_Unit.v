@@ -33,7 +33,14 @@ module hazardDetectionUnit_r0 (
  parameter bge = 8'b101_11000;
  parameter bgeu = 8'b111_11000;
  parameter bltu = 8'b110_11000;
-	always @(IF_ID_Opcode, IF_ID_Rs, IF_ID_Rt, ID_EX_MemRead, ID_EX_Rt, equal, ID_EX_Rd, EX_MEM_Rd, ID_EX_RegWrite, EX_MEM_RegWrite) begin
+ initial 
+ begin
+ 	PCWrite <= 1'b1;
+ 	ID_EX_CtrlFlush <= 1'b0;
+ 	IF_ID_Flush <= 1'b0;
+ 	IF_ID_Hold <= 1'b1; 
+ end
+	always @(IF_ID_Opcode, IF_ID_Rs, IF_ID_Rt, ID_EX_MemRead, ID_EX_Rt, ID_EX_Rd, EX_MEM_Rd, ID_EX_RegWrite, EX_MEM_RegWrite) begin
 		if((ID_EX_MemRead == 1'b1) && ((ID_EX_Rt == IF_ID_Rs) || (ID_EX_Rt == IF_ID_Rt))) begin
 			PCWrite <= 1'b0; // disable
 			ID_EX_CtrlFlush <= 1'b1;//control signals = 0

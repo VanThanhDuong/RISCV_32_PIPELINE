@@ -29,7 +29,7 @@ output ID_EX_Regwrite_out
 p_reg_32b ALUdata(.rst(rst),.en(en),.clk(clk),.data_in(ALU_in),.data_out(ALU_out));
 p_reg_32b pcm(.rst(rst),.en(en),.clk(clk),.data_in(pcm_in),.data_out(pcm_out));
 p_reg_32b datareg(.rst(rst),.en(en),.clk(clk),.data_in(datareg_in),.data_out(datareg_out));
-p_reg_5b regindex(.rst(rst),.en(en),.clk(clk),.data_in(regdindex_in),.data_out(regdindex_out));
+p_reg_5b regadindex(.rst(rst),.en(en),.clk(clk),.data_in(regdindex_in),.data_out(regdindex_out));
 p_reg_2b WBsel(.rst(rst),.en(en),.clk(clk),.data_in(WBsel_in),.data_out(WBsel_out));
 p_reg_1b MEMRw(.rst(rst),.en(en),.clk(clk),.data_in(MEMRw_in),.data_out(MEMRw_out));
 p_reg_3b Rsel(.rst(rst),.en(en),.clk(clk),.data_in(Rsel_in),.data_out(Rsel_out));

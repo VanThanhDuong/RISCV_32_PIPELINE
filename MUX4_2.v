@@ -1,19 +1,17 @@
 module mux4_2 #(parameter datawidth = 32)(
 input [1:0] muxsel,
-input [datawidth - 1 : 0] immgendata,
 input [datawidth - 1 : 0] datareg2,
 input [datawidth - 1 : 0] dataALU,
 input [datawidth - 1 : 0] dataWB,
-input Bsel,
 output [datawidth - 1 : 0] MUX_out );
-case(muxsel)
-2'b00: 
+reg [31:0] mux_temp;
+always@(muxsel)
 begin
-if (Bsel == 1) MUX_out = immgendata;
-else MUX_out = datareg2;
-end
-2'b01: assign MUX_out = dataWB;
-2'b10: assign MUX_out = dataALU;
-default: assign MUX_out = pcx;
+case(muxsel)
+2'b00: mux_temp <= datareg2;
+2'b01: mux_temp <= dataWB;
+2'b10:  mux_temp <= dataALU;
 endcase
+end
+assign MUX_out = mux_temp;
 endmodule

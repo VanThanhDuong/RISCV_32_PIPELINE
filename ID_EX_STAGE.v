@@ -5,12 +5,12 @@ input [regindex - 1 : 0] IFIDreg2_in,
 output [regindex - 1 : 0] IFIDreg2_out,
 input [regindex - 1 : 0] IFIDregd_in,
 output [regindex - 1 : 0] IFIDregd_out,
-input [regindex - 1 : 0] datareg1_in,
-output [regindex - 1 : 0] datareg1_out,
-input [regindex - 1 : 0] datareg2_in,
-output [regindex - 1 : 0] datareg2_out,
-input [regindex - 1 : 0] pcx_in,
-output [regindex - 1 : 0] pcx_out,
+input [datawidth - 1 : 0] datareg1_in,
+output [datawidth - 1 : 0] datareg1_out,
+input [datawidth - 1 : 0] datareg2_in,
+output [datawidth - 1 : 0] datareg2_out,
+input [datawidth - 1 : 0] pcx_in,
+output [datawidth - 1 : 0] pcx_out,
 //control signal
 input [1:0] Wbsel_in,
 output [1:0] Wbsel_out,
@@ -52,7 +52,7 @@ p_reg_1b Asel(.rst(rst),.en(en),.clk(clk),.data_in(Asel_in),.data_out(Asel_out))
 p_reg_1b Bsel(.rst(rst),.en(en),.clk(clk),.data_in(Bsel_in),.data_out(Bsel_out));
 p_reg_3b Rsel(.rst(rst),.en(en),.clk(clk),.data_in(Rsel_in),.data_out(Rsel_out));
 p_reg_2b Wsel(.rst(rst),.en(en),.clk(clk),.data_in(Wsel_in),.data_out(Wsel_out));
-p_reg_3b immsel(.rst(rst),.en(en),.clk(clk),.data_in(immsel_in),.data_out(immsel_out));
-p_reg_1b immsel(.rst(rst),.en(en),.clk(clk),.data_in(IF_ID_Regwrite_in),.data_out(IF_ID_Regwrite_out));
+p_reg_32b IF_ID_imm(.rst(rst),.en(en),.clk(clk),.data_in(imm_in),.data_out(imm_out));
+p_reg_1b immsel124(.rst(rst),.en(en),.clk(clk),.data_in(IF_ID_Regwrite_in),.data_out(IF_ID_Regwrite_out));
 endmodule
 
