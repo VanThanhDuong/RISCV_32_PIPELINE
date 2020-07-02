@@ -42,7 +42,7 @@ module hazardDetectionUnit_r0 (
  end
 	always @(IF_ID_Opcode, IF_ID_Rs, IF_ID_Rt, ID_EX_MemRead, ID_EX_Rt, ID_EX_Rd, EX_MEM_Rd, ID_EX_RegWrite, EX_MEM_RegWrite) begin
 		if((ID_EX_MemRead == 1'b1) && ((ID_EX_Rt == IF_ID_Rs) || (ID_EX_Rt == IF_ID_Rt))) begin
-			PCWrite <= 1'b0; // disable
+			PCWrite <= 1'b0; // 
 			ID_EX_CtrlFlush <= 1'b1;//control signals = 0
 			IF_ID_Flush <= 1'b0;// erase 
 			IF_ID_Hold <= 1'b0;
@@ -52,7 +52,7 @@ module hazardDetectionUnit_r0 (
 			ID_EX_CtrlFlush <= 1'b1;
 			IF_ID_Flush <= 1'b0;
 			IF_ID_Hold <= 1'b0;
-		end else if((IF_ID_Opcode[4:0] == jal) || (IF_ID_Opcode == beq && (Breq == 1'b1)) || (IF_ID_Opcode == bne && (Breq == 1'b0))
+		end else if((IF_ID_Opcode[4:0] == jal) || ((IF_ID_Opcode == beq) && (Breq == 1'b1)) || ((IF_ID_Opcode == bne) && (Breq == 1'b0))
 			||(IF_ID_Opcode == blt && (Brlt == 1'b1))|| (IF_ID_Opcode == bge && (Brlt == 1'b0))||(IF_ID_Opcode == bgeu && (Brlt == 1'b0))
 			|| (IF_ID_Opcode == bltu && (Brlt == 1'b1))) begin
 			PCWrite <= 1'b1;

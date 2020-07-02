@@ -1,0 +1,213 @@
+E:/HCMUT_GITHUB/RISCV_32_PIPELINE/Hardzard_Detection_Unit.v {2 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/Hardzard_Detection_Unit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module hazardDetectionUnit_r0
+** Warning: E:/HCMUT_GITHUB/RISCV_32_PIPELINE/Hardzard_Detection_Unit.v(28): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+
+Top level modules:
+	hazardDetectionUnit_r0
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/PCmux.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/PCmux.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module PCmux
+
+Top level modules:
+	PCmux
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ImmOrMUX.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ImmOrMUX.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ImmOrMUX42
+
+Top level modules:
+	ImmOrMUX42
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/RISC_V.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/RISC_V.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module RISC_V
+
+Top level modules:
+	RISC_V
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_3bit.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_3bit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module p_reg_3b
+
+Top level modules:
+	p_reg_3b
+
+} {} {}} {E:/HCMUT_GITHUB/RISCV_32_PIPELINE/Branch comparator.v} {1 {vlog -work work -stats=none {E:/HCMUT_GITHUB/RISCV_32_PIPELINE/Branch comparator.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module branch_comp
+
+Top level modules:
+	branch_comp
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/EX_MEM_STAGE.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/EX_MEM_STAGE.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module EXMEMstage
+
+Top level modules:
+	EXMEMstage
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/Datapath.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/Datapath.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Datapath
+
+Top level modules:
+	Datapath
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_5bit.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_5bit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module p_reg_5b
+
+Top level modules:
+	p_reg_5b
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/IMEM.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/IMEM.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module IMEM
+
+Top level modules:
+	IMEM
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/control.v {1 {vlog -work work -stats=none {E:\HCMUT_GITHUB\RISCV_32_PIPELINE\control.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module control
+
+Top level modules:
+	control
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/immmgen.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/immmgen.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module immgen
+
+Top level modules:
+	immgen
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/FullAdder.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/FullAdder.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module FullAdder
+
+Top level modules:
+	FullAdder
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ForwardingUnit.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ForwardingUnit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module forwardingUnit
+
+Top level modules:
+	forwardingUnit
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/PCOrMUX41.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/PCOrMUX41.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module PCorMUX41
+
+Top level modules:
+	PCorMUX41
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ID_EX_STAGE.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ID_EX_STAGE.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module IDEXstage
+
+Top level modules:
+	IDEXstage
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/DMEM1.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/DMEM1.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module DMEM
+
+Top level modules:
+	DMEM
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_2bit.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_2bit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module p_reg_2b
+
+Top level modules:
+	p_reg_2b
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ID_IF_Stage.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ID_IF_Stage.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module IDIFstage
+
+Top level modules:
+	IDIFstage
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/MUX4_1.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/MUX4_1.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mux4_1
+
+Top level modules:
+	mux4_1
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/RegFile.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/RegFile.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module RegFile
+
+Top level modules:
+	RegFile
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/MUX4_2.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/MUX4_2.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mux4_2
+
+Top level modules:
+	mux4_2
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_4bit.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_4bit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module p_reg_4b
+
+Top level modules:
+	p_reg_4b
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/cong_32bit.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/cong_32bit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module cong_32bit
+
+Top level modules:
+	cong_32bit
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/MEM_WB_STAGE.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/MEM_WB_STAGE.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module MEMWBstage
+
+Top level modules:
+	MEMWBstage
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ALU1.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/ALU1.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/wbmux.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/wbmux.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module muxwb
+
+Top level modules:
+	muxwb
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/PC.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/PC.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/PCPlus4.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/PCPlus4.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module PCPlus4
+
+Top level modules:
+	PCPlus4
+
+} {} {}} E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_1bit.v {1 {vlog -work work -stats=none E:/HCMUT_GITHUB/RISCV_32_PIPELINE/p_reg_1bit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module p_reg_1b
+
+Top level modules:
+	p_reg_1b
+
+} {} {}}

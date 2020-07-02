@@ -27,13 +27,13 @@ always @(muxsel)
 case(muxsel)
 1'b1: 
 begin
-assign Wbsel_out = zero;
-assign MemRw_out = zero;
-assign ALUsel_out = zero;
+assign Wbsel_out = {2{zero}};
+assign MemRw_out = {zero};
+assign ALUsel_out = {4{zero}};
 assign Asel_out = zero;
 assign Bsel_out =zero;
-assign Rsel_out = zero;
-assign Wsel_out = zero;
+assign Rsel_out = {3{zero}};
+assign Wsel_out = {2{zero}};
 assign IF_ID_Regwrite_out = zero;
 end
 1'b0:

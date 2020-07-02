@@ -9,7 +9,7 @@ wire [DATA_WIDTH - 1 : 0]pc_plus_4;
 //IF_ID
 wire [DATA_WIDTH - 1 : 0]instd_out,pcd_out;
 wire [DATA_WIDTH - 1 : 0]imm;
-wire [DATA_WIDTH - 1 : 0]rs1_out,rs2_out;
+//wire [DATA_WIDTH - 1 : 0]rs1_out,rs2_out;
 wire [DATA_WIDTH - 1 : 0]Adder_out;
 //mux
 wire [1:0] Wbsel_out;
