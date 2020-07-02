@@ -4,7 +4,7 @@ input [datawidth - 1 : 0] dataALU,
 input [datawidth - 1 : 0] dataWB,
 output [datawidth - 1 : 0] MUX_out );
 reg [31:0] mux_temp;
-always@(muxsel )
+always@(muxsel or datareg1 or dataALU or dataWB )
 begin
 case(muxsel)
 2'b00: mux_temp <= datareg1;

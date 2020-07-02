@@ -19,6 +19,7 @@ output [31:0] MEM_WB_PC_out
 );
 p_reg_32b DataMEM(.rst(rst),.en(en),.clk(clk),.data_in(DataMEM_in),.data_out(DataMEM_out));
 p_reg_32b ALUdata(.rst(rst),.en(en),.clk(clk),.data_in(DataALU_in),.data_out(DataALU_out));
+p_reg_32b PCMEM(.rst(rst),.en(en),.clk(clk),.data_in(MEM_WB_PC_in),.data_out(MEM_WB_PC_out));
 p_reg_5b regdindex(.rst(rst),.en(en),.clk(clk),.data_in(regdindex_in),.data_out(regdindex_out));
 p_reg_2b WBsel(.rst(rst),.en(en),.clk(clk),.data_in(WBsel_in),.data_out(WBsel_out));
 p_reg_1b REGWRITE(.rst(rst),.en(en),.clk(clk),.data_in(EX_MEM_Regwrite_in),.data_out(EX_MEM_Regwrite_out));

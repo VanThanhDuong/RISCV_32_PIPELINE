@@ -82,20 +82,26 @@ wire [1:0] MEM_WB_WBsel;
 wire MEM_WB_RegWrite;
 wire [31:0]wb;
 wire [31:0] MEM_WB_PC;
-PCmux pcmux(.pc_in(pc_in), .PCSel(PCSel), .pc_plus4(pc_plus_4), .alu(Adder_out));
+//mux2control
+wire PCsel_out;
+wire [datawidth - 1 : 0]MEM_WB_PC_Plus4;
+wire [31:0]PC_Rs1;
+PCmux pcmux(.pc_in(pc_in), .PCSel(PCsel_out), .pc_plus4(pc_plus_4), .alu(Adder_out));
 PC PC(.pc_out(pc_out), .clk(clk), .pc_in(pc_in),.rst(1'b0),.en(PCWrite));
 PCPlus4 pc4(.pc_plus4(pc_plus_4), .pc(pc_out));
 IMEM imem(.inst(inst),.PC(pc_out));
 IDIFstage IFID(.rst(IF_ID_Flush),.en(IF_ID_Hold),.clk(clk),.instd_in(inst),.pcd_in(pc_out),.pcd_out(pcd_out),.instd_out(instd_out));
 hazardDetectionUnit_r0 harzard({instd_out[14:12],instd_out[6:2]},instd_out[19:15],instd_out[24:20],ID_EX_MEMRead,ID_EX_Rt,br_eq,br_lt,ID_EX_Rd,EX_MEM_Rd,ID_EX_RegWrite,EX_MEM_RegWrite,PCWrite,ID_EX_CtrlFlush,IF_ID_Flush,IF_ID_Hold);
 control control(.addr({instd_out[31],instd_out[14:12],instd_out[6:2]}), .PCSel(PCSel), .ImmSel(ImmSel), .RegWEn(RegWEn), .BrUn(BrUn), .BrEq(br_eq), .BrLT(br_lt), .BSel(BSel), .ASel(ASel), .ALUSel(ALUSel), .MemRW(MemRW), .WBSel(WBSel),.Rsel(Rsel),.Wsel(Wsel));
-cong_32bit cong32bit(.s(Adder_out),.cout(),.x(pcd_out),.y(imm),.cin(1'b0));
+
+PCOrRS1 pcorrs1(.IF_ID_Opcode({instd_out[14:12],instd_out[6:2]}),.PC_in(pcd_out),.Rs1(DataA),.out(PC_Rs1));
+cong_32bit cong32bit(.s(Adder_out),.cout(),.x(PC_Rs1),.y(imm),.cin(1'b0));
 RegFile REGfile (instd_out[19:15], instd_out[24:20], MEM_WB_Rd, wb, DataA, DataB, MEM_WB_RegWrite, clk);
 immgen immgen1(.inst(instd_out),.immsel(ImmSel),.imm(imm));
 mux2_control mux2(.muxsel(ID_EX_CtrlFlush),.zero(1'b0),.Wbsel_in(WBSel),.Wbsel_out(Wbsel_out),
 	.MemRw_in(MemRW),.MemRw_out(MemRW_out),.ALUsel_in(ALUSel),.ALUsel_out(ALUsel_out),
 	.Asel_in(ASel),.Asel_out(Asel_out),.Bsel_in(BSel),.Bsel_out(Bsel_out),.Rsel_in(Rsel),.Rsel_out(Rsel_out),
-	.Wsel_in(Wsel),.Wsel_out(Wsel_out),.IF_ID_Regwrite_in(RegWEn),.IF_ID_Regwrite_out(IF_ID_Regwrite_out));
+	.Wsel_in(Wsel),.Wsel_out(Wsel_out),.IF_ID_Regwrite_in(RegWEn),.IF_ID_Regwrite_out(IF_ID_Regwrite_out),.PCsel_in(PCSel),.PCsel_out(PCsel_out));
 
 branch_comp cmp(.dataA(DataA), .dataB(DataB), .br_eq(br_eq), .br_lt(br_lt), .cmpop(BrUn));
 IDEXstage IDEX ( .clk(clk),.rst(1'b0), .en(1'b1),
@@ -199,5 +205,7 @@ MEMWBstage MEM(.rst(1'b0),.clk(clk),.en(1'b1),
 .MEM_WB_PC_in(EX_MEM_PC),
 .MEM_WB_PC_out(MEM_WB_PC)
 );
-muxwb muxwbb(.WBsel(MEM_WB_WBsel),.mem(MEM_WB_DataR),.wb(wb),.alu(MEM_WB_ALU),.pc4(MEM_WB_PC));
+PCPlus4 pclus4(.pc_plus4(MEM_WB_PC_Plus4), .pc(MEM_WB_PC));
+
+muxwb muxwbb(.WBsel(MEM_WB_WBsel),.mem(MEM_WB_DataR),.wb(wb),.alu(MEM_WB_ALU),.pc4(MEM_WB_PC_Plus4));
 endmodule

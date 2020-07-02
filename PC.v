@@ -29,6 +29,7 @@ else
 begin
 if (en)
 pc_1 <= pc_mid;
+else pc_mid <= pc_mid;
 end
 end
 always@(negedge clk)

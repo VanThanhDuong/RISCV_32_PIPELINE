@@ -18,7 +18,7 @@ module RegFile (rs1, rs2, rd, datain, rs1_out, rs2_out, regfilemux_sel, clk);
 		end
 	end
 
-	always @(posedge clk)
+	always @(posedge clk or datain or rd or regfilemux_sel)
 	begin
 		if (regfilemux_sel == 1'b1)
 		begin

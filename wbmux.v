@@ -5,7 +5,7 @@ input[1:0] WBsel;
 output [length-1:0] wb;	
 assign wb = (WBsel==2'b00)? mem:	
 	    (WBsel==2'b01)? alu:
-	    (WBsel==2'b10)? (pc4 + 32'd4):
+	    (WBsel==2'b10)? (pc4):
 		(pc4 + 32'd4);
 endmodule	
 	

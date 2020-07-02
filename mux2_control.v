@@ -22,7 +22,16 @@ input [1:0] Wsel_in,
 output reg [1:0] Wsel_out,
 
 input IF_ID_Regwrite_in,
-output reg IF_ID_Regwrite_out);
+output reg IF_ID_Regwrite_out,
+input PCsel_in,//change in datapath
+output reg PCsel_out
+
+//input [2:0]Immsel_in,
+//output reg [2:0] Immsel_out,
+
+//input BrUn_in,
+//output reg BrUn_out
+);
 always @(muxsel)
 case(muxsel)
 1'b1: 
@@ -35,6 +44,9 @@ assign Bsel_out =zero;
 assign Rsel_out = {3{zero}};
 assign Wsel_out = {2{zero}};
 assign IF_ID_Regwrite_out = zero;
+assign PCsel_out = zero;
+//assign Immsel_out = {3{zero}};
+//assign BrUn_out = zero;
 end
 1'b0:
 begin
@@ -46,6 +58,9 @@ assign Bsel_out = Bsel_in;
 assign Rsel_out = Rsel_in;
 assign Wsel_out = Wsel_in;
 assign IF_ID_Regwrite_out =IF_ID_Regwrite_in;
+assign PCsel_out = PCsel_in;
+//assign Immsel_out = Immsel_in;
+//assign BrUn_out = BrUn_in;
 end
 endcase
 endmodule
