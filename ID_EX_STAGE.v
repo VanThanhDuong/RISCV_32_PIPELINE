@@ -37,7 +37,9 @@ input [31:0] imm_in,
 output [31:0] imm_out,
 
 input IF_ID_Regwrite_in,
-output IF_ID_Regwrite_out
+output IF_ID_Regwrite_out,
+input [4:0] IF_ID_Opcode,
+output [4:0] ID_EX_Opcode
 );
 p_reg_5b IFIDreg1(.rst(rst),.en(en),.clk(clk),.data_in(IFIDreg1_in),.data_out(IFIDreg1_out));
 p_reg_5b IFIDreg2(.rst(rst),.en(en),.clk(clk),.data_in(IFIDreg2_in),.data_out(IFIDreg2_out));
@@ -54,5 +56,6 @@ p_reg_3b Rsel(.rst(rst),.en(en),.clk(clk),.data_in(Rsel_in),.data_out(Rsel_out))
 p_reg_2b Wsel(.rst(rst),.en(en),.clk(clk),.data_in(Wsel_in),.data_out(Wsel_out));
 p_reg_32b IF_ID_imm(.rst(rst),.en(en),.clk(clk),.data_in(imm_in),.data_out(imm_out));
 p_reg_1b immsel124(.rst(rst),.en(en),.clk(clk),.data_in(IF_ID_Regwrite_in),.data_out(IF_ID_Regwrite_out));
+p_reg_5b ID_EX_Opcode11(.rst(rst),.en(en),.clk(clk),.data_in(IF_ID_Opcode),.data_out(ID_EX_Opcode));
 endmodule
 

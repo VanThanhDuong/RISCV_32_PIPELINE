@@ -22,7 +22,8 @@ module hazardDetectionUnit_r0 (
 	output reg PCWrite,
 	output reg ID_EX_CtrlFlush,
 	output reg IF_ID_Flush,
-	output reg IF_ID_Hold
+	output reg IF_ID_Hold,
+	input [4:0] ID_EX_Opcode
 );
 
 wire temp1,temp3;
@@ -35,6 +36,7 @@ reg temp2;
  parameter bge = 8'b101_11000;
  parameter bgeu = 8'b111_11000;
  parameter bltu = 8'b110_11000;
+ parameter load = 5'b00000;
  assign  temp1 = Breq && 1;
  initial 
  begin
@@ -45,7 +47,7 @@ reg temp2;
  end
 	always @(IF_ID_Opcode, IF_ID_Rs, IF_ID_Rt, ID_EX_MemRead, ID_EX_Rt, ID_EX_Rd, EX_MEM_Rd,Breq,Brlt, ID_EX_RegWrite, EX_MEM_RegWrite) begin
 	temp2 <= Breq && 1;
-		if((ID_EX_MemRead == 1'b1) && ((ID_EX_Rt == IF_ID_Rs) || (ID_EX_Rt == IF_ID_Rt))) begin
+		if(((ID_EX_MemRead == 1'b1) && ((ID_EX_Rt == IF_ID_Rs) || (ID_EX_Rt == IF_ID_Rt))) || ((ID_EX_Opcode == load)&&((ID_EX_Rd == IF_ID_Rs)||(ID_EX_Rd == IF_ID_Rt)))) begin
 			PCWrite <= 1'b0; // 
 			ID_EX_CtrlFlush <= 1'b1;//control signals = 0
 			IF_ID_Flush <= 1'b0;// erase 

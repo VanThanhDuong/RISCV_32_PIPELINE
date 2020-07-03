@@ -86,12 +86,13 @@ wire [31:0] MEM_WB_PC;
 wire PCsel_out;
 wire [datawidth - 1 : 0]MEM_WB_PC_Plus4;
 wire [31:0]PC_Rs1;
+wire [4:0] ID_EX_Opcode;
 PCmux pcmux(.pc_in(pc_in), .PCSel(PCsel_out), .pc_plus4(pc_plus_4), .alu(Adder_out));
 PC PC(.pc_out(pc_out), .clk(clk), .pc_in(pc_in),.rst(1'b0),.en(PCWrite));
 PCPlus4 pc4(.pc_plus4(pc_plus_4), .pc(pc_out));
 IMEM imem(.inst(inst),.PC(pc_out));
 IDIFstage IFID(.rst(IF_ID_Flush),.en(IF_ID_Hold),.clk(clk),.instd_in(inst),.pcd_in(pc_out),.pcd_out(pcd_out),.instd_out(instd_out));
-hazardDetectionUnit_r0 harzard({instd_out[14:12],instd_out[6:2]},instd_out[19:15],instd_out[24:20],ID_EX_MEMRead,ID_EX_Rt,br_eq,br_lt,ID_EX_Rd,EX_MEM_Rd,ID_EX_RegWrite,EX_MEM_RegWrite,PCWrite,ID_EX_CtrlFlush,IF_ID_Flush,IF_ID_Hold);
+hazardDetectionUnit_r0 harzard({instd_out[14:12],instd_out[6:2]},instd_out[19:15],instd_out[24:20],ID_EX_MEMRead,ID_EX_Rt,br_eq,br_lt,ID_EX_Rd,EX_MEM_Rd,ID_EX_RegWrite,EX_MEM_RegWrite,PCWrite,ID_EX_CtrlFlush,IF_ID_Flush,IF_ID_Hold,ID_EX_Opcode);
 control control(.addr({instd_out[31],instd_out[14:12],instd_out[6:2]}), .PCSel(PCSel), .ImmSel(ImmSel), .RegWEn(RegWEn), .BrUn(BrUn), .BrEq(br_eq), .BrLT(br_lt), .BSel(BSel), .ASel(ASel), .ALUSel(ALUSel), .MemRW(MemRW), .WBSel(WBSel),.Rsel(Rsel),.Wsel(Wsel));
 
 PCOrRS1 pcorrs1(.IF_ID_Opcode({instd_out[14:12],instd_out[6:2]}),.PC_in(pcd_out),.Rs1(DataA),.out(PC_Rs1));
@@ -135,7 +136,9 @@ IDEXstage IDEX ( .clk(clk),.rst(1'b0), .en(1'b1),
 .imm_in(imm),
 .imm_out(ID_EX_imm),
 .IF_ID_Regwrite_in(IF_ID_Regwrite_out),
-.IF_ID_Regwrite_out(ID_EX_RegWrite)
+.IF_ID_Regwrite_out(ID_EX_RegWrite),
+.IF_ID_Opcode(instd_out[6:2]),
+.ID_EX_Opcode(ID_EX_Opcode)
 );
 mux4_1 mux41(.muxsel(ForwardA),
 .datareg1(ID_EX_DataA),
