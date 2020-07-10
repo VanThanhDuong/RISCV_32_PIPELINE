@@ -16,7 +16,7 @@ module branch_comp(dataA, dataB, br_eq, br_lt, cmpop);
 			else // dataA != dataB
 			begin
 				br_eq = 1'b0; // br_eq = 1 neu A = B, br_eq = 0 neu A != B
-				br_lt = (dataA[WID_DATA-1] == 1); // dataA = 1xxx..xxxx, dataB = 0xxx..xxxx 
+				br_lt = (dataA[WID_DATA-1] == 1);
 			end
 		end
 		else // so sanh khong dau
